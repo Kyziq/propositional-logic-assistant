@@ -1,19 +1,6 @@
 /******************************************************
  * Course:     CSC510 DISCRETE STRUCTURE                *
  *                                                      *
- * Members:                                             *
- * 1. MUHAMAD ADIB ASYRAAF BIN AZIS                     *
- *    Student ID: 2023126433                            *
- *    Group: RCDCS2513B                                 *
- *                                                      *
- * 2. MUHAMMAD KHAIRUL HAZIQ BIN MOHAMAD KHAIRI         *
- *    Student ID: 2023164629                            *
- *    Group: RCDCS2513B                                 *
- *                                                      *
- * 3. MUHAMMAD AYSAR BIN MAHMAD YUSUP                   *
- *    Student ID: 2023189277                            *
- *    Group: RCDCS2513B                                 *
- *                                                      *
  * Selected theory:                                     *
  * Propositional Logic                                  *
  *                                                      *
