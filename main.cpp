@@ -41,9 +41,10 @@ public:
         return p && q; // Returns true if both p and q are true, false otherwise
     }
 
-    // Biconditional operation, p ↔ q
-    // Returns true if both Boolean values are identical, false otherwise.
-    // Example: true ↔ true is true.
+    // Function to perform Disjunction operation, p ∨ q
+    // This operation takes two Boolean values and returns true if either or both are true, and false otherwise.
+    // It's often called "or" operation.
+    // Example: if p is false and q is true, then p ∨ q is true.
     bool Disjunction()
     {
         return p || q; // Returns true if either p or q is true, false otherwise
@@ -169,6 +170,48 @@ void askUserQuestions()
     cout << "\nQuestion 2: What is the result of the operation (P OR Q) if P is false and Q is false? (Enter 1 for true, 0 for false)\n";
     LogicOperations logic2(false, false); // Initializing LogicOperations object with P=false and Q=false
     answer = logic2.Disjunction();        // Performing (P OR Q)
+    cin >> userAnswer;
+    if (userAnswer == answer) // If user's answer matches the correct answer
+    {
+        cout << "Correct! Great job.\n";
+    }
+    else
+    {
+        cout << "Incorrect. The correct answer is " << answer << ".\n";
+    }
+
+    // Third question asks about the operation (P → Q)
+    cout << "\nQuestion 3: What is the result of the operation (P → Q) if P is true and Q is false? (Enter 1 for true, 0 for false)\n";
+    LogicOperations logic3(true, false); // Initializing LogicOperations object with P=true and Q=false
+    answer = logic3.Implication();       // Performing (P → Q)
+    cin >> userAnswer;
+    if (userAnswer == answer) // If user's answer matches the correct answer
+    {
+        cout << "Correct! Great job.\n";
+    }
+    else
+    {
+        cout << "Incorrect. The correct answer is " << answer << ".\n";
+    }
+
+    // Fourth question asks about the operation (P ↔ Q)
+    cout << "\nQuestion 4: What is the result of the operation (P ↔ Q) if P is true and Q is false? (Enter 1 for true, 0 for false)\n";
+    LogicOperations logic4(true, false); // Initializing LogicOperations object with P=true and Q=false
+    answer = logic4.Biconditional();     // Performing (P ↔ Q)
+    cin >> userAnswer;
+    if (userAnswer == answer) // If user's answer matches the correct answer
+    {
+        cout << "Correct! Great job.\n";
+    }
+    else
+    {
+        cout << "Incorrect. The correct answer is " << answer << ".\n";
+    }
+
+    // Fifth question asks about the operation (P → Q)
+    cout << "\nQuestion 5: What is the result of the operation (P → Q) if P is false and Q is false? (Enter 1 for true, 0 for false)\n";
+    LogicOperations logic5(false, false); // Initializing LogicOperations object with P=false and Q=false
+    answer = logic5.Implication();        // Performing (P → Q)
     cin >> userAnswer;
     if (userAnswer == answer) // If user's answer matches the correct answer
     {
