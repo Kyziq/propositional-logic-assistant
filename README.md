@@ -7,7 +7,7 @@ The `Propositional Logic Assistant` is a command-line tool developed as part of 
 ## Features
 The Propositional Logic Assistant delivers the following functionalities:
 
-1. **Calculator Mode**: In this mode, users can manually input logical propositions, and the tool computes and displays the resulting truth value. It comprehends all basic logic operations, including NOT (¬), AND (∧), OR (∨), IMPLIES (→), and IF AND ONLY IF (↔).
+1. **Calculator Mode**: In this mode, users can manually input logical propositions, and the tool computes and displays the resulting truth value. It comprehends all basic logic operations, including NOT (¬), AND (∧), OR (∨), IMPLIES (→), and IF AND ONLY IF (⟷).
 
 2. **Quiz Mode**: This mode engages users with a set of questions aimed at testing their understanding of propositional logic. It provides an effective way to apply learned concepts and measure progress.
 
