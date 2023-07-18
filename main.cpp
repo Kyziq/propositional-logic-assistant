@@ -24,67 +24,63 @@
 #include <iostream>
 using namespace std;
 
-// Class to handle Logical Operations
+// A class that encapsulates logic operations
 class LogicOperations
 {
 private:
-    bool p, q;
+    bool p, q; // Private variables for logic values
 
 public:
-    // Constructor
+    // Constructor that initializes p and q with the provided values
     LogicOperations(bool p, bool q)
     {
         this->p = p;
         this->q = q;
     }
 
-    // Function to perform Negation operation, ¬p
-    // This operation takes a single Boolean value and inverts it.
-    // That is, if p is true (1), it becomes false (0), and vice versa.
-    // Example: if p is true, then ¬p is false.
+    // Negation operation, ¬p
+    // Inverts a Boolean value: true becomes false, and vice versa.
+    // Example: ¬true is false.
     bool Negation()
     {
-        return !p;
+        return !p; // Returns the inverse of p
     }
 
-    // Function to perform Conjunction operation, p ∧ q
-    // This operation takes two Boolean values and returns true if both are true, and false otherwise.
-    // It's often called "and" operation.
-    // Example: if p is true and q is true, then p ∧ q is true.
+    // Conjunction operation, p ∧ q
+    // Returns true if both Boolean values are true, false otherwise.
+    // Example: true ∧ true is true.
     bool Conjunction()
     {
-        return p && q;
+        return p && q; // Returns true if both p and q are true, false otherwise
     }
 
-    // Function to perform Disjunction operation, p ∨ q
-    // This operation takes two Boolean values and returns true if either or both are true, and false otherwise.
-    // It's often called "or" operation.
-    // Example: if p is false and q is true, then p ∨ q is true.
+    // Biconditional operation, p ↔ q
+    // Returns true if both Boolean values are identical, false otherwise.
+    // Example: true ↔ true is true.
     bool Disjunction()
     {
-        return p || q;
+        return p || q; // Returns true if either p or q is true, false otherwise
     }
 
-    // Function to perform Biconditional operation, p ↔ q
+    // Biconditional operation, p ↔ q
     // This operation takes two Boolean values and returns true if both are identical, and false otherwise.
-    // It's often called "if and only if" operation.
+    // It's often called "if and only if" or "iff" operation.
     // Example: if p is true and q is true, then p ↔ q is true.
     bool Biconditional()
     {
-        return (p && q) || (!p && !q);
+        return (p && q) || (!p && !q); // Returns true if both p and q are the same, false otherwise
     }
 
-    // Function to perform Implication operation, p → q
-    // This operation takes two Boolean values and returns true if the first value implies the second.
-    // That is, it's false only when p is true and q is false, and true otherwise.
-    // It's often called "if...then" operation.
-    // Example: if p is true and q is false, then p → q is false.
+    // Implication operation, p → q
+    // Returns true if the first Boolean value implies the second.
+    // It's false only when p is true and q is false, and true otherwise.
+    // Example: true → false is false.
     bool Implication()
     {
-        return !p || q;
+        return !p || q; // Returns true if p implies q, false otherwise
     }
 
-    // Function to print truth table based on the chosen operation
+    // Function to print the truth table for the chosen operation
     void printTruthTable(char op)
     {
         switch (op)
@@ -159,17 +155,19 @@ public:
     }
 };
 
+// Function that asks the user questions to test their understanding of logic operations
 void askUserQuestions()
 {
-    int answer;
-    int userAnswer;
+    int answer;     // To store the correct answer for comparison
+    int userAnswer; // To store the user's answer
 
     cout << "\n***** INTERACTIVE MODE *****\n";
     cout << "Let's test your propositional logic skills with some problems.\n";
 
+    // First question asks about the operation NOT (P AND Q)
     cout << "\nQuestion 1: What is the result of the operation NOT (P AND Q) if P is true and Q is false? (Enter 1 for true, 0 for false)\n";
-    LogicOperations logic1(true, false);
-    answer = !logic1.Conjunction(); // Performing NOT (P AND Q)
+    LogicOperations logic1(true, false); // Initializing LogicOperations object with P=true and Q=false
+    answer = !logic1.Conjunction();      // Performing NOT (P AND Q)
     cin >> userAnswer;
     if (userAnswer == answer)
     {
@@ -180,11 +178,12 @@ void askUserQuestions()
         cout << "Incorrect. The correct answer is " << answer << ".\n";
     }
 
+    // Second question asks about the operation (P OR Q)
     cout << "\nQuestion 2: What is the result of the operation (P OR Q) if P is false and Q is false? (Enter 1 for true, 0 for false)\n";
-    LogicOperations logic2(false, false);
-    answer = logic2.Disjunction();
+    LogicOperations logic2(false, false); // Initializing LogicOperations object with P=false and Q=false
+    answer = logic2.Disjunction();        // Performing (P OR Q)
     cin >> userAnswer;
-    if (userAnswer == answer)
+    if (userAnswer == answer) // If user's answer matches the correct answer
     {
         cout << "Correct! Great job.\n";
     }
@@ -194,14 +193,16 @@ void askUserQuestions()
     }
 }
 
+// Function that serves as a logic calculator, asking the user for input and displaying the results
 void calculatorMode()
 {
-    char op;
-    bool p, q;
-    char exitLoop;
+    char op;       // To store the operator entered by the user
+    bool p, q;     // To store the truth values entered by the user
+    char exitLoop; // To control whether to continue the loop or not
 
     do
     {
+        // Asking the user for the operator
         cout << "\nPlease select the logical operator you'd like to use:\n"
              << "'!' for NEGATION (NOT)\n"
              << "'&' for CONJUNCTION (AND)\n"
@@ -211,12 +212,16 @@ void calculatorMode()
              << "Enter Operator: ";
         cin >> op;
 
+        // Error checking for operator
         if (op != '!' && op != '&' && op != '|' && op != '>' && op != '=')
         {
             cout << "\nError: The operator you entered is not recognized! Please try again with a valid operator.\n";
             continue;
         }
 
+        // If operator is NOT, only one truth value is needed.
+        // If operator is not NOT, both truth values are needed.
+        // Truth values are then asked from the user.
         if (op == '!')
         {
             cout << "Enter the truth value of P to apply NOT operator (0 for false, 1 for true)\nValue of P: ";
@@ -232,9 +237,11 @@ void calculatorMode()
             cin >> q;
         }
 
+        // Result of the operation is calculated and displayed
         cout << "\n***** EVALUATING YOUR PROPOSITION *****\n";
         LogicOperations logic(p, q);
 
+        // Results are displayed based on the operator
         if (op == '!')
             cout << "Negation (NOT P) is: " << logic.Negation() << endl;
 
@@ -250,8 +257,10 @@ void calculatorMode()
         else if (op == '=')
             cout << "Biconditional (P IF AND ONLY IF Q) is: " << logic.Biconditional() << endl;
 
+        // Truth table for the operation is printed
         logic.printTruthTable(op);
 
+        // Asking the user if they want to continue or not
         cout << "\nWould you like to evaluate another proposition? Please enter 'Y' for Yes and 'N' for No: ";
         cin >> exitLoop;
     } while (toupper(exitLoop) == 'Y'); // The loop will continue as long as the user enters 'y' or 'Y'
@@ -262,9 +271,9 @@ int main()
     char mode;
 
     cout << "***** Welcome to the Propositional Logic Assistant! *****\n";
-
     do
     {
+        // Allow the user to choose between Calculator mode and Quiz mode
         cout << "\nPlease select the mode you'd like to use:\n"
              << "'C' for CALCULATOR\n"
              << "'Q' for QUIZ\n"
@@ -284,17 +293,19 @@ int main()
             askUserQuestions();
             break;
         case 'E':
-            // Exit
+            // Exit the program
             cout << "\n***** Thank you for using the Propositional Logic Assistant! Have a great day! *****\n";
             return 0;
         default:
+            // If the user entered an unrecognized mode, display an error message
             cout << "\nError: The mode you entered is not recognized! Please try again with a valid mode.\n";
             break;
         }
 
+        // Ask the user if they want to switch mode or exit the program
         cout << "\nWould you like to switch mode or exit the program? Please enter 'Y' for Yes and 'N' for No: ";
         cin >> mode;
-    } while (toupper(mode) != 'N');
+    } while (toupper(mode) != 'N'); // If the user enters 'N' or 'n', exit the program
 
     cout << "\n***** Thank you for using the Propositional Logic Assistant! Have a great day! *****\n";
     return 0;
