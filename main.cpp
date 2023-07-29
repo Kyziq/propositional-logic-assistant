@@ -25,47 +25,34 @@ public:
         this->q = q;
     }
 
-    // Negation operation, ¬p
-    // Inverts a Boolean value: true becomes false, and vice versa.
-    // Example: ¬true is false.
+    // Negation (¬p) reverses the Boolean value of p.
     bool Negation()
     {
-        return !p; // Returns the inverse of p
+        return !p; // Reverses the value of p
     }
 
-    // Conjunction operation, p ∧ q
-    // Returns true if both Boolean values are true, false otherwise.
-    // Example: true ∧ true is true.
+    // Conjunction (p ∧ q) is true if both p and q are true.
     bool Conjunction()
     {
-        return p && q; // Returns true if both p and q are true, false otherwise
+        return p && q; // Returns true if p and q are both true
     }
 
-    // Function to perform Disjunction operation, p ∨ q
-    // This operation takes two Boolean values and returns true if either or both are true, and false otherwise.
-    // It's often called "or" operation.
-    // Example: if p is false and q is true, then p ∨ q is true.
+    // Disjunction (p ∨ q) is true if either p or q, or both are true.
     bool Disjunction()
     {
-        return p || q; // Returns true if either p or q is true, false otherwise
+        return p || q; // Returns true if at least one of p or q is true
     }
 
-    // Biconditional operation, p ↔ q
-    // This operation takes two Boolean values and returns true if both are identical, and false otherwise.
-    // It's often called "if and only if" or "iff" operation.
-    // Example: if p is true and q is true, then p ↔ q is true.
-    bool Biconditional()
-    {
-        return (p && q) || (!p && !q); // Returns true if both p and q are the same, false otherwise
-    }
-
-    // Implication operation, p → q
-    // Returns true if the first Boolean value implies the second.
-    // It's false only when p is true and q is false, and true otherwise.
-    // Example: true → false is false.
+    // Implication (p → q) is true except when p is true and q is false.
     bool Implication()
     {
-        return !p || q; // Returns true if p implies q, false otherwise
+        return !p || q; // Returns true except in the case where p is true and q is false
+    }
+
+    // Biconditional (p ↔ q) is true if p and q have the same value.
+    bool Biconditional()
+    {
+        return (p && q) || (!p && !q); // Returns true if p and q have the same value
     }
 
     // Function to print the truth table for the chosen operation
