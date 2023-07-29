@@ -73,7 +73,7 @@ public:
 
         case '&':
             // Truth table for p ∧ q
-            cout << "Truth Table for COJUNCTION operation (p AND q)" << endl;
+            cout << "Truth Table for CONJUNCTION operation (p AND q)" << endl;
             cout << "+---+---+---------+" << endl;
             cout << "| p | q | p AND q |" << endl;
             cout << "+---+---+---------+" << endl;
